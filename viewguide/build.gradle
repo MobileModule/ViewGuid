@@ -28,3 +28,16 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation dependenciesList.Appcompat
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.druid.viewguide'
+                artifactId = 'viewguide'
+                version = '1.0.1'
+            }
+        }
+    }
+}
